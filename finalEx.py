@@ -3,13 +3,13 @@ import timeit
 from tqdm import tqdm
 from itertools import product
 from scipy.stats import describe
-import AF as AF
+import AFLex as AF
 
 rs = range(0,6) #restrictions
 dr = range(0,6) #directeds
 rj = range(0,6) #rejects
 it = range(0,10)#iterations
-me = range(1,4) #method
+me = range(1,2)#4) #method
 
 KD_Off= range(74,160)
 B_Off = range(0, 74)
@@ -32,7 +32,7 @@ for i,j,k,l,m in tqdm(product(rs,dr,rj,it,me)):
     t = timeit.default_timer() - start_time
     st = describe(AF.getRanks(s.finalSolution))
 
-    f.write(str(m)+ ','+ str(s.obj)+ ',' + str(i)+','+str(j)+','+str(k)+','+str(l)+','+str(s.changes)+','+str(t)+','+str(s.feasible) +','+str(st.nobs)+','+str(st.mean)+','+str(st.minmax[0])+','+str(st.minmax[1])+','+str(st.variance)+','+ str(num)+'\n')
+    f.write(str("1Lex")+ ','+ str(s.obj)+ ',' + str(i)+','+str(j)+','+str(k)+','+str(l)+','+str(s.changes)+','+str(t)+','+str(s.feasible) +','+str(st.nobs)+','+str(st.mean)+','+str(st.minmax[0])+','+str(st.minmax[1])+','+str(st.variance)+','+ str(num)+'\n')
 
     for o in Officers:
 	g.write(str(s.finalSolution[o])+',')

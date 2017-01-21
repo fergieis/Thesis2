@@ -463,7 +463,7 @@ def af(methodFlag=1, allowableChanges=[0,0,0]): #don't need init solution
     
 
     elif methodFlag == 1: #SMAColdstart
-	sol = bestOfN(5, allowableChanges)
+	sol = bestOfN(30, allowableChanges)
 
     elif methodFlag == 2: #LPWarmstart
 	kd_m = gp.Model()	
